@@ -14,8 +14,8 @@ app.get("/productos",async (req, res) => {
 
 app.get("/productoRandom",async (req, res) => {
     const objs = new Contenedor('./productos.txt');
-    len = await objs.getAll();
-    random_number = Math.floor(Math.random() * len.length) +1;
+    const len = await objs.getAll();
+    const random_number = Math.floor(Math.random() * len.length) +1;
     res.json(await objs.getById(random_number));
 });
 
