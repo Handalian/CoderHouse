@@ -1,0 +1,44 @@
+[
+  {
+    "id": 3,
+    "title": "Teclado",
+    "price": 200,
+    "thumbnail": "http://www.google.com/"
+  },
+  {
+    "id": 2,
+    "title": "Monitor",
+    "price": 300,
+    "thumbnail": "http://www.google.com/"
+  },
+  {
+    "id": 4,
+    "title": "Tele",
+    "price": 300,
+    "thumbnail": "http://www.google.com/"
+  },
+  {
+    "id": 7,
+    "title": "Tele",
+    "price": 300,
+    "thumbnail": "http://www.google.com/"
+  },
+  {
+    "id": 5,
+    "title": "Tele",
+    "price": 300,
+    "thumbnail": "http://www.google.com/"
+  },
+  {
+    "id": 1,
+    "title": "Casa",
+    "price": 300,
+    "thumbnail": "http://www.google.com/"
+  },
+  {
+    "id": 6,
+    "title": "Casa",
+    "price": 300,
+    "thumbnail": "http://www.google.com/"
+  }
+]
