@@ -1,0 +1,17 @@
+div(class="jumbotron")
+    h1(style="color:blue;") Load data
+    br
+    form(action="/api/productos" method="post")
+        div(class="form-group")
+            label(for="title")
+                b Title
+            input(id="title" class="form-control" type="text" name="title" onchange="console.log('Pug')")
+        .form-group
+            label(for='price')
+                b Price
+            input#price.form-control(type='text' name='price')
+        .form-group
+            label(for='thumbnail')
+                b Thumbnail
+            input#thumbnail.form-control(type='text' name='thumbnail')
+        button(class="btn btn-success mt-3 mb-5") Send 
