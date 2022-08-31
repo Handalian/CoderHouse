@@ -40,15 +40,14 @@ socket.on('from-server-product', data => {
 // que se ingrese un usario en este cliente.
 function renderProduct(data) {
     const productoHTML = 
-        `<tr>
-        <td>${data.id}</td>
+        `<td>${data.id}</td>
         <td>${data.title}</td>
         <td>${data.price}</td>
         <td>
         <img width="30" src="${data.thumbnail}"alt="">
-        </td>
-        </tr>`;
-    console.log(productoHTML);
-    document.querySelector('#historial-productos').innerHTML = productoHTML;
+        </td>`;
+    const row = document.createElement('tr');
+    row.innerHTML = productoHTML;
+    document.querySelector('#historial-productos').appendChild(row);
 };
  
