@@ -3,7 +3,7 @@
 
     {{#if DB_Productos}}
         <div class="table-responsive">
-            <table class="table table-dark">
+            <table class="table table-dark" id="historial-productos">
                 <tr style="color: yellow;"> <th>Id</th> <th>Title</th> <th>Price</th> </tr>
                 {{#each DB_Productos}}
                 <tr>
@@ -15,8 +15,7 @@
                     </td>
                 </tr>
                 {{/each}}
-                <tr id="historial-productos"></tr>
-                   
+                               
             </table>
         </div>
     {{else}}
