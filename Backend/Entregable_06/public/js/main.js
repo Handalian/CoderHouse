@@ -1,15 +1,15 @@
 const socket = io();
-
+const fs = require('fs');
 socket.on('from-server-mensajes', data => {
     render(data.DB_MENSAJES);
 });
 function render(mensajes) {
-    const cuerpoMensajesHTML = mensajes.map((msj)=>{
+    const cuerpoMensajesHTML = mensajes.map((msj) => {
         return `
         <span style="color:blue;"><b>${msj.author}
         <span style="color:red;"><b> [${msj.time}]:
         <span style="color:green;">${msj.text}</span></span>`;
-    }).join('<br>');  
+    }).join('<br>');
     document.querySelector('#historial').innerHTML = cuerpoMensajesHTML;
 };
 function enviarMensaje() {
@@ -26,9 +26,9 @@ function enviarProducto() {
     const inputPrice = document.querySelector('#price');
     const inputThumbnail = document.querySelector('#thumbnail');
     const product = {
-        title:inputTitle.value,
-        price:inputPrice.value,
-        thumbnail:inputThumbnail.value,
+        title: inputTitle.value,
+        price: inputPrice.value,
+        thumbnail: inputThumbnail.value,
     }
     socket.emit('from-client-product', product);
 };
@@ -39,7 +39,7 @@ socket.on('from-server-product', data => {
 // Al cargar dos usuarios en otro cliente, se sobreescbien en la vista, hasta 
 // que se ingrese un usario en este cliente.
 function renderProduct(data) {
-    const productoHTML = 
+    const productoHTML =
         `<td>${data.id}</td>
         <td>${data.title}</td>
         <td>${data.price}</td>
@@ -50,4 +50,4 @@ function renderProduct(data) {
     row.innerHTML = productoHTML;
     document.querySelector('#historial-productos').appendChild(row);
 };
- 
+
