@@ -36,8 +36,7 @@ function enviarProducto() {
 socket.on('from-server-product', data => {
     renderProduct(data.newObjs);
 });
-// Al cargar dos usuarios en otro cliente, se sobreescbien en la vista, hasta 
-// que se ingrese un usario en este cliente.
+
 function renderProduct(data) {
     const productoHTML =
         `<td>${data.id}</td>
