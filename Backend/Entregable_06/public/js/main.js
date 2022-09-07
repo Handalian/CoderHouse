@@ -1,6 +1,5 @@
 const socket = io();
-const fs = require('fs');
-socket.on('from-server-mensajes', data => {
+socket.on('from-server-mensajes', (data) => {
     render(data.DB_MENSAJES);
 });
 function render(mensajes) {
@@ -13,6 +12,7 @@ function render(mensajes) {
     document.querySelector('#historial').innerHTML = cuerpoMensajesHTML;
 };
 function enviarMensaje() {
+
     const inputUser = document.querySelector('#user');
     const inputContenido = document.querySelector('#contenidoMensaje');
     const mensaje = {

@@ -40,9 +40,9 @@ const DB_Productos = [
         "thumbnail": "https://cdn1.iconfinder.com/data/icons/essentials-pack/96/television_tv_screen_display_technology-256.png"
     }
 ]
-/*const DB_MENSAJES = [
+const DB_MENSAJES = [
     { time: "8/31/2022,1:30:33 PM", author: "Juan", text: "¡Hola! ¿Que tal?" }
-]*/
+]
 
 /* ---------------------- Rutas ----------------------*/
 app.get('/', (req, res) => {
@@ -56,20 +56,16 @@ const server = httpServer.listen(PORT, () => {
 server.on('error', err => console.log(`error en server ${err}`));
 
 /* ---------------------- WebSocket ----------------------*/
-io.on('connection', (socket) => {
-
+io.on('connection', async function (socket) {
+    const DB_MENSAJES = JSON.parse(await fs.promises.readFile("./mensaje.json", "utf-8"), null, 2);
     console.log(`Nuevo cliente conectado! ${socket.id}`);
-    socket.emit('from-server-mensajes', async function() {
-        const DB_MENSAJES = JSON.parse(await fs.promises.readFile("./mensaje.json","utf-8"),null,2);
-        return {DB_MENSAJES};
-    });
-
-    socket.on('from-client-mensaje', async function (mensaje){
-        const DB_MENSAJES = JSON.parse(await fs.promises.readFile("./mensaje.json","utf-8"),null,2);
+    socket.emit('from-server-mensajes', { DB_MENSAJES });
+    socket.on('from-client-mensaje', async function (mensaje) {
+        const DB_MENSAJES = JSON.parse(await fs.promises.readFile("./mensaje.json", "utf-8"), null, 2);
         let fecha = new Date().toLocaleString();
         const newObjs = { "time": fecha, ...mensaje };
         DB_MENSAJES.push(newObjs);
-        await fs.promises.writeFile("./mensaje.json",JSON.stringify(DB_MENSAJES,null,2));
+        await fs.promises.writeFile("./mensaje.json", JSON.stringify(DB_MENSAJES, null, 2));
         io.sockets.emit('from-server-mensajes', { DB_MENSAJES });
     });
 
