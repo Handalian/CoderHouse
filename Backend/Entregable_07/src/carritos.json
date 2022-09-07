@@ -1,29 +1,50 @@
-[{
-  "id": 1,
-  "timestamp": "8/31/2022,1:30:33 PM",
-  "productos": [
-    {
-      "id": 3,
-      "timestamp": "8/31/2022,1:30:33 PM",
-      "title": "Television",
-      "descripcion": "Pantalla",
-      "codigo": "tel_01",
-      "price": 300,
-      "stock": 20,
-      "thumbnail": "https://cdn1.iconfinder.com/data/icons/essentials-pack/96/television_tv_screen_display_technology-256.png"
-    },
-    {
-      "id": 1,
-      "timestamp": "8/31/2022,1:30:33 PM",
-      "title": "Keyboard",
-      "descripcion": "Teclado",
-      "codigo": "tec_01",
-      "price": 200,
-      "stock": 10,
-      "thumbnail": "https://cdn0.iconfinder.com/data/icons/zondicons/20/keyboard-256.png"
-    }
-  ]
-},
+[
+  {
+    "id": 1,
+    "timestamp": "8/31/2022,1:30:33 PM",
+    "productos": [
+      {
+        "id": 3,
+        "timestamp": "8/31/2022,1:30:33 PM",
+        "title": "Television",
+        "descripcion": "Pantalla",
+        "codigo": "tel_01",
+        "price": 300,
+        "stock": 20,
+        "thumbnail": "https://cdn1.iconfinder.com/data/icons/essentials-pack/96/television_tv_screen_display_technology-256.png"
+      },
+      {
+        "id": 1,
+        "timestamp": "8/31/2022,1:30:33 PM",
+        "title": "Keyboard",
+        "descripcion": "Teclado",
+        "codigo": "tec_01",
+        "price": 200,
+        "stock": 10,
+        "thumbnail": "https://cdn0.iconfinder.com/data/icons/zondicons/20/keyboard-256.png"
+      },
+      {
+        "id": 3,
+        "timestamp": "8/31/2022,1:30:33 PM",
+        "title": "Television",
+        "descripcion": "Pantalla",
+        "codigo": "tel_01",
+        "price": 300,
+        "stock": 20,
+        "thumbnail": "https://cdn1.iconfinder.com/data/icons/essentials-pack/96/television_tv_screen_display_technology-256.png"
+      },
+      {
+        "id": 2,
+        "timestamp": "8/31/2022,1:30:33 PM",
+        "title": "Television",
+        "descripcion": "Pantalla",
+        "codigo": "tel_01",
+        "price": 300,
+        "stock": 5,
+        "thumbnail": "https://cdn1.iconfinder.com/data/icons/essentials-pack/96/television_tv_screen_display_technology-256.png"
+      }
+    ]
+  },
   {
     "id": 2,
     "timestamp": "8/31/2022,1:30:33 PM",
@@ -49,5 +70,10 @@
         "thumbnail": "https://cdn0.iconfinder.com/data/icons/zondicons/20/keyboard-256.png"
       }
     ]
+  },
+  {
+    "id": 3,
+    "timestamp": "9/7/2022, 6:56:46 PM",
+    "prductos": []
   }
 ]

@@ -14,6 +14,10 @@ routerCarrito.get("/", async (req, res) => {
     const carts = new classCart('./src/carritos.json');
     res.json(await carts.getAll());
 });
+routerCarrito.post("/", async (req, res) => {
+    const carts = new classCart('./src/carritos.json');
+    res.json(await carts.createCarts());
+});
 
 routerCarrito.delete("/:id", async (req, res) => {
     const id = parseInt(req.params.id);
@@ -45,5 +49,9 @@ routerCarrito.delete("/:id/productos/:id_prod", async (req, res) => {
     const result = await carts.deleteProduct(idProducto, id);
     statusCheck(res, result, "delete", `api/carrito/${id}/productos/:${id_prod}`);
 });
+
+routerCarrito.get('*', function (req, res) {
+    res.status(404).json("Forbbiden error");
+})
 module.exports = routerCarrito;
 

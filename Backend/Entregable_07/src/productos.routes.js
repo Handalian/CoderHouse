@@ -1,6 +1,18 @@
 const { ContenedorProductos } = require("./ClassProductos.js");
 const express = require('express');
+//import { config } from "../utils/config.js";
+const config = require("../utils/config.js");
 const routerProductos = express.Router();
+
+const admin = config.isAdmin;
+function onlyAdmin(req, res, next) {
+    if (!admin) {
+        res.status(403).json({ code: 403, msg: `Forbbiden acces ${req.method} ${req.baseUrl} ${req.url}` });
+    } else {
+        next();
+    }
+}
+
 statusCheck = (res, result, method, route) => {
     if (result == null) {
         res.status(404).json({ Error: -2, descripcion: `ruta ${route} metodo ${method} no implementada` });
@@ -43,5 +55,8 @@ routerProductos.delete("/:id", async (req, res) => {
     statusCheck(res, result, "delete", `api/productos/${id}`);
 });
 
+routerProductos.get('*', function (req, res) {
+    res.status(404).json("Forbbiden error");
+})
 module.exports = routerProductos;
 

@@ -3,9 +3,6 @@ const express = require('express');
 const morgan = require('morgan');
 /*
 Funcion post class carito no anda
-Implementar middleware para chequeear admin
-Crear respond si la ruta esta mal
-
 */
 /* ---------------------- Instacias de sevidor ----------------------*/
 const app = express();
@@ -20,6 +17,11 @@ app.use(express.static(__dirname + '/public'));
 /* ---------------------- Rutas ----------------------*/
 app.use('/api/productos', routerProductos);
 app.use('/api/carrito', routerCarrito);
+
+app.get('*', function (req, res) {
+    res.status(404).json("Forbbiden error");
+})
+
 /* ---------------------- Servidor ----------------------*/
 const PORT = 8080;
 const server = app.listen(PORT, () => {

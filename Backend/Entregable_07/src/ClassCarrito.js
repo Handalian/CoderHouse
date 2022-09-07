@@ -58,10 +58,11 @@ class classCarts {
     }
     async addProduct(idProducto, idCarrito) {
         const carts = await this.loadFiles();
-        const products = new ContenedorProductos('./productos.json');
+        const products = new ContenedorProductos('./src/productos.json');
         const arrayProducts = await products.getAll()
         const index = carts.findIndex(cart => cart.id === idCarrito);
         const newProducto = arrayProducts.find(product => product.id === idProducto);
+        console.log(newProducto);
         if (index >= 0) {
             carts[index].productos.push(newProducto);
             await this.saveFiles(carts);
