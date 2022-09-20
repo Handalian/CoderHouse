@@ -1,4 +1,4 @@
-/*use ecommerce*/
+/*descomentar use ecommerce*/
 db.createCollection('mensajes')
 db.createCollection('productos')
 //1
@@ -142,10 +142,10 @@ db.createUser({
     ]
 })
 // Correr nuevamente el server en:
-//mongod--dbpath "C:\Program Files\MongoDB\Server\6.0\bin" --auth
-//mongosh mongodb://127.0.0.1:27017
+/*descomentar mongod--dbpath "C:\Program Files\MongoDB\Server\6.0\bin" --auth*/
+/*descomentarmongosh mongodb://127.0.0.1:27017*/
 db.auth("pepe", "asd456")
-/* use ecommerce */
+/*descomentar use ecommerce */
 // Testeo Usuario
 db.productos.deleteMany({}) // ----> No autorizado
 
