@@ -1,10 +1,3 @@
-/*
-    No anda el renderisado de los productos ni de los mensajes
-    No Funciona socket.emit('from-server-mensajes', { mensajes });
-
-*/
-
-
 /* ---------------------- Modulos ----------------------*/
 import express from 'express';
 import exphbs from 'express-handlebars';
@@ -62,7 +55,6 @@ io.on('connection', async function (socket) {
     // console.log(`Nuevo cliente conectado! ${socket.id}`);
     socket.emit('from-server-mensajes', { DB_MENSAJES });
     socket.on('from-client-mensaje', async function (mensaje) {
-        console.log(1);
         let fecha = new Date().toLocaleString();
         const mensajeData = { "time": fecha, ...mensaje };
         const newMensaje = await apiMensajes.insertar(mensajeData);
@@ -72,7 +64,6 @@ io.on('connection', async function (socket) {
 
     socket.on('from-client-product', async function (product) {
         const newObjs = await apiProductos.insertar(product);
-        console.log(newObjs);
         io.sockets.emit('from-server-product', { "id": newObjs, ...product });
     })
 })
