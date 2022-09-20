@@ -34,7 +34,7 @@ function enviarProducto() {
 };
 
 socket.on('from-server-product', data => {
-    renderProduct(data.newObjs);
+    renderProduct(data);
 });
 
 function renderProduct(data) {
