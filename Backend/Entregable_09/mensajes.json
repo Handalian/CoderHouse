@@ -1,0 +1,71 @@
+[{
+  "_id": {
+    "$oid": "6329feb018c1d9289b5d4bb4"
+  },
+  "time": "8/31/2022,1:30:33 PM",
+  "author": "Juan",
+  "text": "¡Hola! ¿Que tal?"
+},{
+  "_id": {
+    "$oid": "6329feb018c1d9289b5d4bb5"
+  },
+  "time": "9/7/2022, 6:41:25 PM",
+  "author": "Pedro",
+  "text": "¡Hola Juan! ¿Que tal?"
+},{
+  "_id": {
+    "$oid": "6329feb018c1d9289b5d4bb6"
+  },
+  "time": "9/7/2022, 7:20:40 PM",
+  "author": "Juan",
+  "text": "Muy bien, ¿tu?"
+},{
+  "_id": {
+    "$oid": "6329feb018c1d9289b5d4bb7"
+  },
+  "time": "9/7/2022, 7:22:17 PM",
+  "author": "Pedro",
+  "text": "Me algro, excelente"
+},{
+  "_id": {
+    "$oid": "6329feb018c1d9289b5d4bb8"
+  },
+  "time": "9/7/2022, 7:22:42 PM",
+  "author": "Roberto",
+  "text": "Bueenas"
+},{
+  "_id": {
+    "$oid": "6329feb018c1d9289b5d4bb9"
+  },
+  "time": "9/7/2022, 7:25:37 PM",
+  "author": "Pedro",
+  "text": "¿Que contas Roberto?"
+},{
+  "_id": {
+    "$oid": "6329feb018c1d9289b5d4bba"
+  },
+  "time": "9/7/2022, 7:30:42 PM",
+  "author": "Roberto",
+  "text": "Nada nuevo ¿tu Pedro?"
+},{
+  "_id": {
+    "$oid": "6329feb018c1d9289b5d4bbb"
+  },
+  "time": "9/7/2022, 7:40:37 PM",
+  "author": "Pedro",
+  "text": "Por ahora nada"
+},{
+  "_id": {
+    "$oid": "6329feb018c1d9289b5d4bbc"
+  },
+  "time": "9/7/2022, 8:20:40 PM",
+  "author": "Juan",
+  "text": "No me dejen afuera de la charla"
+},{
+  "_id": {
+    "$oid": "6329feb018c1d9289b5d4bbd"
+  },
+  "time": "9/7/2022, 9:20:40 PM",
+  "author": "Juan",
+  "text": "Hola...?"
+}]
