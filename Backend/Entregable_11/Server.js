@@ -58,10 +58,11 @@ server.on('error', err => console.log(`error en server ${err}`));
 /* ---------------------- WebSocket ----------------------*/
 io.on('connection', async function (socket) {
     const DB_MENSAJES = JSON.parse(JSON.stringify(await apiMensajes.listarAll()));
-    const normalizedMSJ = normalaizer(DB_MENSAJES);
+    //const normalizedMSJ = normalaizer(DB_MENSAJES);
     /*   console.log(util.inspect(normalizedMSJ, false, 12, true),
            JSON.stringify(normalizedMSJ).length)*/
-    socket.emit('from-server-mensajes', { normalizedMSJ });
+    //socket.emit('from-server-mensajes', { normalizedMSJ });
+    socket.emit('from-server-mensajes', { DB_MENSAJES });
     socket.on('from-client-mensaje', async function (mensaje) {
         let fecha = new Date().toLocaleString();
         const mensajeData = { "time": fecha, ...mensaje };
