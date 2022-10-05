@@ -1,0 +1,14 @@
+[
+    {
+        "author": {
+            "user": "Juan@gmail.com",
+            "name": "Juan",
+            "age": 30,
+            "surname": "Gonzalez",
+            "alias": "Juancito",
+            "avatar": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRKNVMtHuOvZ_iM0SzAg7Y3kFbimzY6K9MFVI6p8nTtmg&s.png"
+        },
+        "time": "8/31/2022,1:30:33 PM",
+        "text": "¡Hola! ¿Que tal?"
+    }
+]
