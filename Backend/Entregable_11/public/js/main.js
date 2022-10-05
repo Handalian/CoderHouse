@@ -1,13 +1,16 @@
-import { denormalizer } from "../../src/utils/normalizer";
+//import { denormalizer } from "../../src/utils/normalizer";
 
 const socket = io();
-socket.on('from-server-mensajes', (data) => {
+/*socket.on('from-server-mensajes', (data) => {
     console.log(util.inspect(data, false, 12, true),
         JSON.stringify(data).length)
     //const data2render = denormalizer(data.normalizedMSJ)
     //console.log(data
 
     //render(data2render);
+});*/
+socket.on('from-server-mensajes', (data) => {
+    render(data.DB_MENSAJES);
 });
 function render(mensajes) {
     const cuerpoMensajesHTML = mensajes.map((msj) => {
