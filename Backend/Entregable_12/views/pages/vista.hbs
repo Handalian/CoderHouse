@@ -1,0 +1,12 @@
+<div class="container mt-3">
+    {{> user}}
+    {{> formulario}}
+    {{> historico}}
+    {{> chat}}
+</div>
+
+<script>
+    setTimeout(() => {
+        document.location.href = "/api/user/logout";
+    }, 60000)
+</script>
