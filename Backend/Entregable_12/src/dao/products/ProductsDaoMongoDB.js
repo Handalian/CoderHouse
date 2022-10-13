@@ -2,7 +2,7 @@ import { MongoDBContainer } from "../../containers/MongoDBContainer.js";
 class ProductsDaoMongoDB extends MongoDBContainer {
   constructor() {
     super("products", {
-      id: { type: Number, required: true },
+      id: { type: String, required: true },
       timestamp: { type: String, required: true },
       title: { type: String, required: true },
       description: { type: String, required: true },

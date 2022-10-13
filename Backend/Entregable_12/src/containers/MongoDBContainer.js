@@ -40,7 +40,7 @@ export class MongoDBContainer {
             ...object
         };
         const newData = new this.collection(newObject);
-        newData.save()
+        await newData.save()
         return newObject;
     }
     async deleteById(id) {

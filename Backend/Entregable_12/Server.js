@@ -69,7 +69,9 @@ app.set('view engine', 'hbs');
 
 app.use('/api/user', routerLogin);
 app.use('/api/products', auth, routerProducts);
-
+app.get('*', function (req, res) {
+    res.redirect('/api/user/login');
+});
 
 /* ---------------------- Servidor ----------------------*/
 const PORT = 8080;
@@ -84,10 +86,6 @@ server.on('error', err => console.log(`error en server ${err}`));
 io.on('connection', async function (socket) {
     allMessages = await messageDB.loadMessage()
     socket.emit('from-server-message', { allMessages });
-    // const normMessage = normalizedData(allMessages)
-    // socket.emit('from-server-mensajes', { normMessage });
-    // socket.on('from-client-mensaje', async function (normMessage) {
-    //     const message = desnormalizedData(normMessage);
 
     socket.on('from-client-message', async function (message) {
         await messageDB.createMessage(message);
@@ -100,7 +98,10 @@ io.on('connection', async function (socket) {
         allProducts = await productsDB.loadProducts()
         io.sockets.emit('from-server-product', newObjs);
     })
-    socket.on('from-client-userLogin', async function (inputUserLogin) {
-        console.log(`user web socket ${inputUserLogin}`)
-    })
+    // socket.on('from-client-userLogin', async function (inputUserLogin) {
+    //     console.log(`user web socket ${await inputUserLogin}`)
+    //     session.user = inputUserLogin;
+    //     session.admin = true;
+    //     console.log(session.user)
+    // })
 })

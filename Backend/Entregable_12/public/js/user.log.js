@@ -1,8 +1,11 @@
-function userLogout() {
-    document.location.href = "/api/user/logout";
-}
-function userLogin() {
+
+function logInUser() {
     const inputUserLogin = document.querySelector('#user').value;
-    alert(inputUserLogin.value)
+    document.location.href = "/api/user/login?user=" + inputUserLogin;
     // socket.emit('from-client-userLogin', inputUserLogin);
 }
+
+function logOutUser() {
+    document.location.href = "/api/user/logout";
+}
+

@@ -3,6 +3,9 @@ import session from 'express-session';
 const routerLogin = express.Router();
 
 routerLogin.get('/login', async (req, res) => {
+    // console.log(`user ${req.session.user}}`)
+    // if (req.session.user) {
+    //     res.redirect('/api/products')
     if (req.query.user) {
         req.session.user = req.query.user;
         req.session.admin = true;

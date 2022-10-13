@@ -112,4 +112,3 @@ function sendProduct() {
 //     socket.emit('from-client-userLogin', inputUserLogin);
 // }
 
-
