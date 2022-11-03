@@ -9,6 +9,12 @@ routerUser.get('/login', async (req, res) => {
     res.render('pages/user/logIn')
 })
 
+
+routerUser.get('/logInError', async (req, res) => {
+    res.render('pages/user/error/logInError')
+})
+
+/*Comentar para probar passport */
 routerUser.post('/login', async function (req, res) {
     const { userName, password } = req.body;
     const checkUser = await usersDB.findUser(userName);
@@ -19,6 +25,7 @@ routerUser.post('/login', async function (req, res) {
         res.render('pages/user/error/logInError')
     }
 })
+
 routerUser.get('/signup', async (req, res) => {
     res.render('pages/user/signUp');
 })
