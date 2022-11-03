@@ -13,6 +13,8 @@ import connectMongo from 'connect-mongo';
 import dotenv from 'dotenv';
 dotenv.config();
 
+
+
 import routerProducts from './routes/products.routes.js';
 import routerUser from './routes/login.routes.js';
 import { selectDao } from "./src/utils/config.js";
@@ -40,11 +42,49 @@ const io = new IOServer(httpServer);
 app.use(express.static('./public'));
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
+/*---------------------- passport --------------------*/
+/* Descomentar para probar passport*/
 
+// import passport from "passport";
+// import { Strategy } from "passport-local";
+// const LocalStrategy = Strategy;
+
+// const daoUsers = await import(`./src/dao/users/UsersDao${selectDao}.js`);
+// const usersDB = daoUsers.usersDB;
+// passport.use(new LocalStrategy(
+//     async function (userName, password, done) {
+//         const checkUser = await usersDB.findUser(userName);
+//         if (checkUser.userName == userName) {
+//             return done(null, checkUser);
+//         } else {
+//             return done(null, false);
+//         }
+//     }
+// ));
+
+// passport.serializeUser((user, done) => {
+//     done(null, user.userName);
+// });
+
+// // ------> Como lo vuelvo async?
+// // passport.deserializeUser((userName, done) => {
+// //     const checkUser = await usersDB.findUser(userName);
+// //     done(null, checkUser);
+// // });
+
+// app.use(passport.initialize());
+// app.use(passport.session());
+
+
+/* Al usarlo salta este Error: Login sessions require session support. Did you forget to use `express-session` middleware? */
+
+/* ----------------------*/
 app.use(session({
+    cookie: { maxAge: 50000 },
+    rolling: true,
     store: MongoStore,
     secret: process.env.SECRET_KEY,
-    resave: true,
+    // resave: true,
     saveUninitialized: true
 }))
 
@@ -66,7 +106,7 @@ app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'hbs');
 
 /* ---------------------- Rutas ----------------------*/
-
+// app.post('/api/user/login', passport.authenticate('local', { successRedirect: '/api/products', failureRedirect: '/api/user/logInError' }));
 app.use('/api/user', routerUser);
 app.use('/api/products', auth, routerProducts);
 app.get('*', function (req, res) {
