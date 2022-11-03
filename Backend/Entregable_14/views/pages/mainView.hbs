@@ -1,0 +1,21 @@
+<div class="container mt-3">
+    {{> user}}
+    {{> formulario}}
+    {{> historico}}
+    {{> chat}}
+</div>
+
+<script>
+    onInactive(60000, function () {
+        document.location.href = "/api/user/logOut";
+    });
+
+    function onInactive(ms, cb) {
+        var wait = setTimeout(cb, ms);
+        document.onmousemove = document.mousedown = document.mouseup = document.onkeydown = document.onkeyup = document.focus = function () {
+            clearTimeout(wait);
+            wait = setTimeout(cb, ms);
+
+        };
+    }
+</script>
